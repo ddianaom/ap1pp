@@ -1,7 +1,11 @@
+import java.util.Arrays;
+
 public class Interface {
 	
 
-	String[][] janela = new String[10][10]; 
+	String[][] janela = new String[10][10];
+	public Spaceship player = new Spaceship("[■]", 8, 3);
+	public Spaceship enemy = new Spaceship("|©|", 1, 6);
 	
 		
 	public void criarInterface() {
@@ -9,7 +13,13 @@ public class Interface {
 		{
 			for (int coluna=0;coluna<10;coluna++)
 			{
-				janela[linha][coluna] = "|_|";				
+				if(linha == player.x && coluna == player.y) {
+					janela[linha][coluna] = player.spaceship;
+				} else if(linha == enemy.x && coluna == enemy.y) {
+					janela[linha][coluna] = enemy.spaceship;
+				} else {
+					janela[linha][coluna] = "|_|";
+				}
 			}
 		}
 	}
@@ -25,7 +35,7 @@ public class Interface {
 			System.out.println("");
 		}
 		System.out.println("\nRodada X");
-		System.out.println("\n         up         ");
+		System.out.println("         up         ");
 		System.out.println("         ^          ");
 		System.out.println("         |          ");
 		System.out.println(" left <-   -> right ");

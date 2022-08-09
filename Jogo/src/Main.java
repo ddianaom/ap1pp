@@ -4,6 +4,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		Interface tela = new Interface();
+		
 		tela.criarInterface();
 		tela.mostrarInteface();
 	}
