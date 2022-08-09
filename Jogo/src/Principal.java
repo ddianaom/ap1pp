@@ -4,8 +4,11 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		Interface tela = new Interface();
-		tela.criarInterface();
-		tela.mostrarInteface();
+		
+		while(In-game) {
+			tela.criarInterface();
+			tela.mostrarInteface();
+		}
 	}
 
 }
