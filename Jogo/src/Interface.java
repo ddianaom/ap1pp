@@ -28,7 +28,7 @@ public class Interface {
 	}
 		
 	public void mostrarInteface() {
-		System.out.println("Player ♥: [X] | Enemy ♥: [XXX]\n");
+		System.out.println("Player ♥: "+ player.Pegarvida() + " | Enemy ♥: " + enemy.Pegarvida() + "\n");
 		for (int linha=0;linha<10;linha++)
 		{
 			for (int coluna=0;coluna<10;coluna++)

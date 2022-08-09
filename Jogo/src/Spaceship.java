@@ -12,6 +12,10 @@ public class Spaceship{
 		this.life_points = life;
 	}
 	
+	public int Pegarvida() {
+		return this.life_points;
+	}
+	
 	public void Perdervida() {
 		this.life_points = life_points - 1;
 	}
