@@ -7,8 +7,8 @@ public class Interface {
 	int randomNum = rand.nextInt(10);
 
 	String[][] janela = new String[10][10];
-	public Spaceship player = new Spaceship("[■]", 8, 3);
-	public Spaceship enemy = new Spaceship("|©|", randomNum, randomNum);
+	public Spaceship player = new Spaceship("[■]", 8, 3, 3);
+	public Spaceship enemy = new Spaceship("|©|", randomNum, randomNum, 10);
 	
 		
 	public void criarInterface() {

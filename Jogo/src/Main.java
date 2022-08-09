@@ -11,12 +11,34 @@ public class Main {
 		Boolean ingame = true;
 		
 		
+		
 		while(ingame) {
 			tela.criarInterface();
 			tela.mostrarInteface();
-			mensagem = JOptionPane.showInputDialog("Forne�a seu peso");
+			mensagem = JOptionPane.showInputDialog("CAPITÃO, DIGA SUAS ORDENS!!!");
+			JOptionPane.showMessageDialog(null, "SIM SENHOR!!!");
 			
-			JOptionPane.showMessageDialog(null, mensagem);
+			switch (mensagem) {
+			
+			case "0":
+				ingame = false;
+				JOptionPane.showMessageDialog(null, "SAINDO DO JOGO");
+				
+			case "8":
+				// mover para cima
+				
+			case "4":
+				// mover para left
+				
+			case "6":
+				// mover para right
+				
+			case "2":
+				// mover para down
+				
+			case "5":
+				// mover para shoot
+			}
 		}
 	}
 
