@@ -1,4 +1,5 @@
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class Spaceship{
 	
@@ -29,13 +30,22 @@ public class Spaceship{
 		if(colision) {
 			this.life_points = this.life_points - 10;
 			this.y -= 1;
+			JOptionPane.showMessageDialog(null, "DOEU!!!");
+		}
+	}
+	
+	public void Perdervidaenemy(Boolean colisionenemy) {
+		if(colisionenemy) {
+			this.life_points = this.life_points - 10;
+			this.y -= 1;
+			JOptionPane.showMessageDialog(null, "BUUUM!!! ACERTOU!!!");
 		}
 	}
 	
 	public void Movimentacaoaleatoria() {
 		int randomNum = rand.nextInt(10);
-		this.x = 5; //randomNum;
-		this.y = 5; //randomNum;
+		this.x = randomNum;
+		this.y = randomNum;
 	}
 	
 	public void Movimentacao(String direction) {
@@ -65,6 +75,14 @@ public class Spaceship{
 		if(pos_x_1 == pos_x_2 && pos_y_1 == pos_y_2) {
 			return true;
 		} else {
+			return false;
+		}
+	}
+	
+	public Boolean Colisionenemy(int pos_y_1, int pos_y_2) {
+		if(pos_y_1 == pos_y_2) {
+			return true;
+		}else {
 			return false;
 		}
 	}

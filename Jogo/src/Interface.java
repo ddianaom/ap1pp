@@ -34,7 +34,7 @@ public class Interface {
 		System.out.println("         5         ");
 		System.out.println("         ^          ");
 		System.out.println("         |          ");
-		System.out.println(" 1 <-          -> 2 ");
+		System.out.println(" 1 <-          -> 3 ");
 		System.out.println("         |          ");
 		System.out.println("         v          ");
 		System.out.println("         2       ");

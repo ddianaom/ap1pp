@@ -29,6 +29,7 @@ public class Main {
 			player.Perdervida(player.Colision(player.x, player.y, enemy.x, enemy.y));
 			tela.Setship(player.x, player.y, "[■]");
 			tela.Setship(enemy.x, enemy.y, "[§]");
+			enemy.Perdervidaenemy(enemy.Colisionenemy(player.y, enemy.y));
 			tela.mostrarInteface(player.Pegarvida(), enemy.Pegarvida());
 			
 			
