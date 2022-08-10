@@ -1,44 +1,40 @@
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 public class Main {
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String mensagem = null;
+		String mensagem = "";
 		
 		Interface tela = new Interface();
+		Random rand = new Random(); 
+		int randomNum = rand.nextInt(10);
+
+		Spaceship player = new Spaceship("[■]", 5, 3, 30);
+		Spaceship enemy = new Spaceship("|©|", randomNum, randomNum, 100);
+		
 		Boolean ingame = true;
 		
 		
-		
 		while(ingame) {
+			
+			if(tela.Gameover(player.Pegarvida()) || tela.Win(enemy.Pegarvida())) {
+				break;
+			}
+			
 			tela.criarInterface();
-			tela.mostrarInteface();
+			enemy.Movimentacaoaleatoria();
+			player.Perdervida(player.Colision(player.x, player.y, enemy.x, enemy.y));
+			tela.Setship(player.x, player.y, "[■]");
+			tela.Setship(enemy.x, enemy.y, "[§]");
+			tela.mostrarInteface(player.Pegarvida(), enemy.Pegarvida());
+			
+			
 			mensagem = JOptionPane.showInputDialog("CAPITÃO, DIGA SUAS ORDENS!!!");
 			JOptionPane.showMessageDialog(null, "SIM SENHOR!!!");
-			
-			switch (mensagem) {
-			
-			case "0":
-				ingame = false;
-				JOptionPane.showMessageDialog(null, "SAINDO DO JOGO");
-				
-			case "8":
-				// mover para cima
-				
-			case "4":
-				// mover para left
-				
-			case "6":
-				// mover para right
-				
-			case "2":
-				// mover para down
-				
-			case "5":
-				// mover para shoot
-			}
+			player.Movimentacao(mensagem);
 		}
 	}
 

@@ -1,34 +1,27 @@
-import java.util.Arrays;
+import javax.swing.JOptionPane;
 import java.util.Random;
 
 public class Interface {
 	
-	Random rand = new Random(); 
-	int randomNum = rand.nextInt(10);
-
 	String[][] janela = new String[10][10];
-	public Spaceship player = new Spaceship("[■]", 8, 3, 3);
-	public Spaceship enemy = new Spaceship("|©|", randomNum, randomNum, 10);
-	
 		
 	public void criarInterface() {
 		for (int linha=0;linha<10;linha++)
 		{
 			for (int coluna=0;coluna<10;coluna++)
 			{
-				if(linha == player.x && coluna == player.y) {
-					janela[linha][coluna] = player.spaceship;
-				} else if(linha == enemy.x && coluna == enemy.y) {
-					janela[linha][coluna] = enemy.spaceship;
-				} else {
-					janela[linha][coluna] = "|_|";
-				}
+				janela[linha][coluna] = "|_|";
+				
 			}
 		}
 	}
+	
+	public void Setship(int position_x,int position_y, String ship) {
+		janela[position_x][position_y] = ship;
+	}
 		
-	public void mostrarInteface() {
-		System.out.println("Player ♥: "+ player.Pegarvida() + " | Enemy ♥: " + enemy.Pegarvida() + "\n");
+	public void mostrarInteface(int lifepoint_a, int lifepoint_b) {
+		System.out.println("Player ♥: " + lifepoint_a +" | Enemy ♥: " + lifepoint_b + " \n");
 		for (int linha=0;linha<10;linha++)
 		{
 			for (int coluna=0;coluna<10;coluna++)
@@ -38,13 +31,31 @@ public class Interface {
 			System.out.println("");
 		}
 		System.out.println("\nRodada X");
-		System.out.println("         up         ");
+		System.out.println("         5         ");
 		System.out.println("         ^          ");
 		System.out.println("         |          ");
-		System.out.println(" left <-   -> right ");
+		System.out.println(" 1 <-          -> 2 ");
 		System.out.println("         |          ");
 		System.out.println("         v          ");
-		System.out.println("        down         ");
+		System.out.println("         2       ");
 		
+	}
+	
+	public Boolean Gameover(int player_life) {
+		if(player_life == 0) {
+			JOptionPane.showMessageDialog(null, "GAME OVER!!!");
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public Boolean Win(int enemy_life) {
+		if(enemy_life == 0) {
+			JOptionPane.showMessageDialog(null, "VICTORY!!!");
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
