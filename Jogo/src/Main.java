@@ -35,7 +35,6 @@ public class Main {
 			
 			
 			mensagem = JOptionPane.showInputDialog("CAPITÃO, DIGA SUAS ORDENS!!!");
-			JOptionPane.showMessageDialog(null, "SIM SENHOR!!!");
 			player.Movimentacao(mensagem);
 		}
 	}
