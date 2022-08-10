@@ -17,6 +17,7 @@ public class Main {
 		
 		Boolean ingame = true;
 		
+		tela.mostrarIntro();
 		
 		while(ingame) {
 			
